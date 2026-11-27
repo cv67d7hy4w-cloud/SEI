@@ -662,7 +662,8 @@
   function daisySVG(size, extraClass) {
     var gid = "dg" + (++gidSeq) + "_" + Math.floor(Math.random() * 9999);
     var petals = [];
-    var N = 12, SKIP = 2;
+    // 꽃잎 기준: i=0 → 12시(위), 시계방향 30° 간격 → i=8 → 240°(8시, 왼쪽 아래) 결손
+    var N = 12, SKIP = 8;
     for (var i = 0; i < N; i++) {
       if (i === SKIP) continue;
       var ang = i * (360 / N);
